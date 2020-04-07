@@ -12,6 +12,10 @@
 
 ### [![mark](https://icongram.jgog.in/fontawesome/bookmark.svg?size=24&color=808080)Math](Math/AdvMath)
 
+### [![mark](https://icongram.jgog.in/fontawesome/bookmark.svg?size=24&color=808080)CG Note](CG/takedown)
+
+### [![mark](https://icongram.jgog.in/fontawesome/bookmark.svg?size=24&color=808080)ML Note](ML/optimizer)
+
 ### [![mark](https://icongram.jgog.in/fontawesome/bookmark.svg?size=24&color=808080)Other](Other/CPP_ErrorProne)
 
 ---

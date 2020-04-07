@@ -1,11 +1,9 @@
-- **Notes**
-- [Data Structure](Data/List)
-- [Algorithm](Algorithm/Sort)
-- [Problem](Problem/#)
-- [Math](Math/AdvMath)
-- [CG Note](CG/takedown)
-- [ML Note](ML/optimizer)
-- [Other](Other/CPP_ErrorProne)
+[![back](https://icongram.jgog.in/entypo/back.svg?color=808080&size=16)Back](README.md)
+
+---
+- [Math](README.md)
+	+ [AdvMath](Math/AdvMath.md)
+	+ [LinearAlgebra](Math/LinearAlgebra.md)
 - **Links**
 - [![Homepage](https://icongram.jgog.in/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
 - [![Unity](https://icongram.jgog.in/simple/unity.svg?color=808080&size=16)Unity Assets](https://assetstore.unity.com/publishers/34649)
