@@ -4,6 +4,7 @@
 - [CG](README.md)
 	+ [Note](CG/takedown.md)
 	+ [Algorithm [施工中]](CG/CGalgorithm.md)
+	+ [Tricks](CG/#)
 	+ [OpenGL](CG/OpenGL.md)
 	+ [SIGGRAPH](CG/sig.md)
 - **Links**
