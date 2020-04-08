@@ -3,6 +3,8 @@
 ---
 - [ML](README.md)
 	+ [Note](ML/takedown.md)
+	+ [Initial](ML/initial.md)
+	+ [Loss Function](ML/lossFunc.md)
 	+ [Optimizer](ML/optimizer.md)
 - **Links**
 - [![Homepage](https://icongram.jgog.in/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
