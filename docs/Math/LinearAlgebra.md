@@ -517,3 +517,41 @@ B是对角阵，计算起来就相对方便，所以说相似变换就是坐标�
 
 <div align=center><img width="60%" src="Pics/math/30.png"/></div>
 </details>
+
+## 雅可比矩阵(Jacobian Matrix)
+### 通俗解释
+雅可比矩阵可以看作从一个坐标系中的形状到另一个坐标系的非线性映射。如下图，右边映射后的形状是扭曲的，不好计算面积，但如果我们将它分为小块，那么小块的方形的面积就容易计算。
+
+雅可比矩阵描述的就是这样一种面积（或体积，n维空间下依此类推）在坐标空间变换之后的比例关系。
+
+<center><img width="50%" src="Pics/math/jacobian/7.png"/></center>
+
+### 定义
+设 f:Rn→Rm 是一个函数，它的输入是向量 x∈Rn ，输出是向量 y=f(x)∈Rm :
+
+<center><img width="30%" src="Pics/math/jacobian/1.png"/></center>
+
+那么雅可比矩阵是一个m×n矩阵：
+
+<center><img width="60%" src="Pics/math/jacobian/2.png"/></center>
+
+由于<strong>矩阵描述了向量空间中的运动——变换</strong>，而雅可比矩阵看作是将点 [公式] 转化到点 [公式] ，或者说是从一个n维的欧式空间转换到m维的欧氏空间。
+
+如果m = n， 可以定义雅可比矩阵 J 的行列式，也就是<strong>雅可比行列式（Jacobian determinant）。</strong>
+
+在微积分换元中，也就是给出了 <strong>从x到y的n维体积的比率</strong>
+
+<center><img width="30%" src="Pics/math/jacobian/3.png"/></center>
+
+### 几何意义
+二维情况下，雅可比行列式代表xy平面上的面积微元与uv平面上的面积微元的比值。
+
+如图所示，dA代表dx和dy张成的平行四边形的面积，如果du和dv充分接近于0，那么dA：
+
+<center><img width="80%" src="Pics/math/jacobian/4.png"/></center>
+
+<center><img width="30%" src="Pics/math/jacobian/5.png"/></center>
+
+二重积分换元：
+
+<center><img width="60%" src="Pics/math/jacobian/6.png"/></center>
