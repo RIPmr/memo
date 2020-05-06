@@ -1,4 +1,4 @@
-# Algorithm Memo
+# Memo
 
 ![book](https://icongr.am/fontawesome/book.svg?size=16&color=808080) HZT's notebook
 
