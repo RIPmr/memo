@@ -1,8 +1,10 @@
 - **Notes**
-- [Math Note](Math/AdvMath)
+- [Data Structure](Data/List)
+- [Algorithm](Algorithm/Sort)
+- [Problem](Problem/#)
+- [Math](Math/AdvMath)
 - [CG Note](CG/takedown)
 - [ML Note](ML/optimizer)
-- [Vis Note](Vis/visualization)
 - [Other](Other/CPP_ErrorProne)
 - **Links**
 - [![Homepage](https://icongr.am/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)

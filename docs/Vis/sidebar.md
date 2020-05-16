@@ -1,9 +1,8 @@
-- **Notes**
-- [Math Note](Math/AdvMath)
-- [CG Note](CG/takedown)
-- [ML Note](ML/optimizer)
-- [Vis Note](Vis/visualization)
-- [Other](Other/CPP_ErrorProne)
+﻿[![back](https://icongr.am/entypo/back.svg?color=808080&size=16)Back](README.md)
+
+---
+- [Vis](README.md)
+	+ [Note](Vis/visualization.md)
 - **Links**
 - [![Homepage](https://icongr.am/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
 - [![Unity](https://icongr.am/simple/unity.svg?color=808080&size=16)Unity Assets](https://assetstore.unity.com/publishers/34649)
