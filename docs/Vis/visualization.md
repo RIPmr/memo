@@ -825,6 +825,12 @@ DBSCAN算法(Density-Based Spatial Clustering of Applications with Noise)<br>
 ### 错题记录
 
 
+
+
+
+
+
+
 ## 第六章
 ### 空间场数据可视化概述
 #### 如何绘制图像?
@@ -977,3 +983,428 @@ DBSCAN算法(Density-Based Spatial Clustering of Applications with Noise)<br>
 #### 混合绘制
 难点:正确显示不同类型绘制对象间的层次关系和透明颜色的叠加
 
+### 错题记录
+
+
+
+
+
+
+
+## 第七章
+### 灵活多变的地图
+#### 地理空间数据
+如: 一个餐厅的地理位置和评分
+
+- 描述的是对象在空间中的位置和属性
+- 真实的人类生活空间
+- 由移动设备和传感器产生
+
+```
+等角度地图投影
+```
+墨卡托投影 (正轴等角圆柱投影)
+
+<center><img width="60%" src="Vis/pics/58.png"/></center>
+<center>等角度投影</center>
+
+<strong>缺点：</strong>面积变形明显
+
+```
+等面积投影
+```
+亚尔勃斯投影
+
+<center><img width="60%" src="Vis/pics/59.png"/></center>
+<center>等面积投影</center>
+
+<center><img width="40%" src="Vis/pics/60.png"/></center>
+<center>投影结果</center>
+
+解决了等角度地图投影的面积变形，被广泛应用于着重表现面积的国家或地区等
+
+```
+等距离投影
+```
+方位角投影
+
+<center><img width="60%" src="Vis/pics/61.png"/></center>
+<center><img width="40%" src="Vis/pics/62.png"/></center>
+
+被广泛应用于导航地图，联合国国徽也应用了等距离投影
+
+> 如何展示对象的属性信息?
+<center><img width="80%" src="Vis/pics/63.png"/></center>
+<center>地图常用可视化变量</center>
+
+<center><img width="80%" src="Vis/pics/64.png"/></center>
+<center>选择合适的可视化变量</center>
+
+
+### 地图上的点与线
+#### 点
+- 经纬度坐标和对象的名称，类别组成
+- 地理数据可视化中最基础的数据类型
+
+#### 点数据的可视化
+- 直接绘制
+- 点标记
+- 图标标记
+
+#### 图标或符号可视化原则
+- 符号必须直观且符合常识 
+- 符号的数量和种类不宜过多
+
+```
+点数据可视化编码
+```
+<center><img width="60%" src="Vis/pics/65.png"/></center>
+<center><img width="60%" src="Vis/pics/66.png"/></center>
+
+```
+聚合方法
+```
+<center><img width="60%" src="Vis/pics/67.png"/></center>
+
+```
+采样方法
+```
+- 模拟原数据分布的低密度数据
+- 减轻视图的负担和数据的交叠
+
+<center><img width="60%" src="Vis/pics/68.png"/></center>
+
+#### 线数据的可视化
+连接两个或更多地点的线段或者路径
+
+<center><img width="60%" src="Vis/pics/69.png"/></center>
+
+```
+边绑定
+```
+<center><img width="60%" src="Vis/pics/70.png"/></center>
+
+```
+采样方法
+```
+<center><img width="60%" src="Vis/pics/71.png"/></center>
+
+```
+信息说明
+```
+<center><img width="60%" src="Vis/pics/72.png"/></center>
+
+
+### 区域数据可视化
+- 简单理解为地图上的一个区域
+- 有长度，有宽度
+- 是由一系列的点围成的一个封闭的二维空间
+
+可采用连线和集合等方法展现区域属性之间的多元关系。
+
+```
+等值线图
+```
+- 绘制等值线
+- 标注数值大小
+<center><img width="60%" src="Vis/pics/73.png"/></center>
+
+```
+Choropleth Map(分级统计图)
+```
+- 包括统计值的区域数据
+- 用颜色代表数值
+<center><img width="60%" src="Vis/pics/74.png"/></center>
+
+<strong>不足</strong>
+- 假设数据平均分布
+- 视觉误导
+
+<center><img width="60%" src="Vis/pics/75.png"/></center>
+
+```
+比较统计图
+```
+<center><img width="60%" src="Vis/pics/76.png"/></center>
+<center><img width="90%" src="Vis/pics/77.png"/></center>
+
+```
+规则形状地图
+```
+<center><img width="90%" src="Vis/pics/78.png"/></center>
+
+```
+气泡集合
+```
+隐式曲线对每一组集合聚类生成一个连续光滑的闭包;
+
+<center><img width="50%" src="Vis/pics/79.png"/></center>
+
+```
+线集合地图
+```
+
+<center><img width="50%" src="Vis/pics/80.png"/></center>
+
+```
+视觉编码
+```
+<center><img width="60%" src="Vis/pics/81.png"/></center>
+
+```
+折线图、点图
+```
+<center><img width="60%" src="Vis/pics/82.png"/></center>
+
+### 地理可视化应用
+<center><img width="60%" src="Vis/pics/83.png"/></center>
+
+```
+三维绘制
+```
+- 常配有交互操作
+- 允许图像进行旋转和缩放
+
+<center><img width="60%" src="Vis/pics/84.png"/></center>
+
+```
+城市数据的可视化的挑战
+```
+- 数据量大，多源异构
+- 需满足多样的分析任务
+- 需表达让用户更容易发现数据特征的数据
+
+<center><img width="60%" src="Vis/pics/85.png"/></center>
+<center><img width="60%" src="Vis/pics/86.png"/></center>
+<center><img width="60%" src="Vis/pics/87.png"/></center>
+
+```
+多个数据源数据融合、推理系统
+```
+应用:
+- 出租车轨迹数据
+- 手机轨迹信息数据
+- 微博数据等多个数据源的数据
+
+特点:
+- 数据维度不一
+- 属性各异
+
+处理方法:<br>
+系统针对每一种数据源都设计了高效的数据存储和计算方法，并建立了各个数据对象在时空上的关联。
+
+```
+城市数据的可视化
+```
+- 帮助人们更好的理解大数据
+- 优化人们的生活
+
+<center><img width="60%" src="Vis/pics/88.png"/></center>
+<center><img width="70%" src="Vis/pics/89.png"/></center>
+<center><img width="70%" src="Vis/pics/90.png"/></center>
+
+
+### 错题记录
+
+
+
+
+
+## 第八章
+### 时间属性的可视化
+#### 时变数据
+随着时间变化的、带有时间属性的数据。
+
+#### 时变数据的分类
+<center><img width="70%" src="Vis/pics/91.png"/></center>
+
+#### 时间序列数据
+生物DNA测序
+
+#### 特点
+- 量大
+- 维数多
+- 变量多
+- 类型丰富
+- 分布范围广泛
+
+> 时变型数据可视化设计的三个维度
+<center><img width="70%" src="Vis/pics/92.png"/></center>
+
+```
+表达维度
+```
+#### 线性
+- 以典型的阅读方式呈现内容
+- 将时间数据作为二维的线图显示
+- x轴表示时间，y轴表示其他的变量
+
+<center><img width="60%" src="Vis/pics/93.png"/></center>
+
+#### 径向
+- 将时间序列编码为弧形
+- 沿圆周排列
+- 合适呈现周期性的时变型数据
+
+<center><img width="70%" src="Vis/pics/94.png"/></center>
+<center><img width="70%" src="Vis/pics/95.png"/></center>
+
+#### 网格
+- 和日历相对应
+- 一般采用表格映射的方式
+
+<center><img width="70%" src="Vis/pics/96.png"/></center>
+<center><img width="70%" src="Vis/pics/97.png"/></center>
+<center><img width="70%" src="Vis/pics/98.png"/></center>
+
+#### 随机
+<center><img width="70%" src="Vis/pics/99.png"/></center>
+<center><img width="70%" src="Vis/pics/100.png"/></center>
+
+```
+比例维度
+```
+比例维度<strong>(按时间顺序)</strong>可以被用来表示<strong>事件之间的距离，事件的持续时间</strong>。
+
+<center><img width="70%" src="Vis/pics/101.png"/></center>
+
+#### 相对顺序
+相对顺序是指存在一个基线事件在时间零点，可以被用在<strong>多时间线</strong>的对比。
+<center><img width="70%" src="Vis/pics/102.png"/></center>
+
+#### 对数
+对数的比例从按时间的前后顺序排列的比例转换而来，强调了最早的或最近的事件，对数比例适用于长范围或不均匀的事件布局。
+<center><img width="70%" src="Vis/pics/103.png"/></center>
+
+#### 次序
+次序，按次序的比例中连续事件之间的距离是相等的，只表达事件的顺序。
+<center><img width="70%" src="Vis/pics/104.png"/></center>
+
+#### 次序+中间时长
+次序+中间时长，这种形式可以用来表达长时间和不均匀分布的事件。
+<center><img width="70%" src="Vis/pics/105.png"/></center>
+
+```
+布局维度
+```
+#### 单一时间线
+<center><img width="70%" src="Vis/pics/106.png"/></center>
+
+#### 多个时间线
+<center><img width="70%" src="Vis/pics/107.png"/></center>
+
+#### 分段时间线
+在这种形式中，一个时间线被有意义的进行划分，进行另一种形式的比较。
+<center><img width="70%" src="Vis/pics/108.png"/></center>
+
+#### 多个时间线加上分段时间线
+指不同属性时间线加上分割的时间段，可以进行多种形式的比较。
+
+
+### 多变量时变型数据可视化
+- 数据本身的属性
+- 数据集的顺序性
+- 数据分析的方法
+- 展现、挖掘数据中的规律
+
+> 多变量时变型数据可视化的步骤
+- 第一步，数据抽象，包括数据降维、特征选取和数据简化
+- 第二步，数据聚类，核心在于定义恰当的距离或相似性度量
+- 第三步，特征分析，包括特征抽取、语义分析等操作
+
+```
+基于线表示
+```
+高维抽象的时变非空间数据的可视化
+- 第一步:进行高维曲线采样，采样的频率由用户交互指定。
+- 第二步:将采样后的高维曲线分段,便于刻画每段曲线的特性,小段之间可以重叠。分段尺寸、重叠程度也由用户交互指定。
+- 第三步:用降维方法将高维曲线投影到二维空间，显示和研究曲线的特性。
+
+<center><img width="30%" src="Vis/pics/109.png"/></center>
+<center>心电图可视化</center>
+
+
+```
+基于图结构
+```
+基于事件的时变型数据可视化
+
+核心:事件演化的组织
+
+- 第一步，用户根据领域需求和任务描述，从数据中找到与用户
+关注点实际相匹配的事件;
+- 第二步，对事件分类，根据事件不同类型的特征描述，从输入
+的数据中检测事件，得到事件实例;
+- 第三步，通过可视化方法将检测到的事件整合到可视表达中。
+
+<center><img width="70%" src="Vis/pics/110.png"/></center>
+
+时变型数据可视化常用的一种交互手段是从时变型数据中<strong>查询特定的时间序列，以便交互地发现特征和趋势</strong>。
+
+#### 交互
+- 表现重要的区域
+
+#### 方法
+- 概览加上下文
+- 层次细节
+
+#### TimeSearcher
+- 直接指定时变趋势模式
+- 操纵时变型数据集
+- 基于实例查询给定的时变趋势模式
+
+<center><img width="70%" src="Vis/pics/111.png"/></center>
+<center><img width="70%" src="Vis/pics/112.png"/></center>
+
+
+### 流数据可视化
+流数据的输入数据并不存储在可随机访问的磁盘或内存中，而是以一个或多个"连续数据流”的形式到达。
+
+#### 常见的流数据
+- 移动通信日志
+- 网络数据(日志、传输数据包、警报等)
+- 高性能集群平台日志
+- 传感器网络记录
+- 金融数据(如股票市场)
+- 社交数据等
+
+#### 流数据的特点.
+- 第一，数据流的潜在大小也许是无限的;
+- 第二，数据元素在线到达，需要实时处理;
+- 第三，无法控制数据元素的到达顺序和数量;
+- 第四，某个元素被处理后，要么被丢弃,要么被归档存储;
+- 第五，对于流数据的查询异常情况和相似类型比较耗时，人工检测日志相当乏味且易出错。
+
+#### 流数据可视化模型及技术
+<center><img width="90%" src="Vis/pics/113.png"/></center>
+
+#### 用户的交互
+- 对输出内容的可视检索
+- 对可视布局的基本交互
+- 自定义的数据定制
+
+#### 多数据库的设计
+- 保护了原始数据
+- 提高了数据存取的效率
+
+#### 系统日志监控流数据可视化
+流数据可视化按功能可以分两种可视化类型:
+- 监控型: 用滑动窗口固定一个时间区间，把流数据转化为静态数据，数据更新方式可以是刷新，属于局部分析;
+- 叠加型或者是历史型: 把新产生的数据可视映射到原来的历史数据可视化结果上，更新方式是渐进式更新，属于全局分析。
+
+#### 系统日志监控流数据可视化
+系统日志数据反映了一机器、一个计算集群的系统性能，是商业智能中最重要的数据。
+
+##### 工业应用
+- Splunk、Loggy、Flume等
+<br>
+LogTool是一个可视化用户浏览行为的工具。它通过分析数据包的不同IP地址和端口，判断用户正在使用的网络程序或者服务。
+<center><img width="80%" src="Vis/pics/114.png"/></center>
+
+#### 文本流数据可视化
+文本数据从事件角度对文本进行可视分析，挖掘事件的发生、发展及变化。
+<br>
+EventRiver首先使用增量式聚类算法从一系列事件中提取热门话题，然后用河流的隐喻将事件的语义和上下文在一个 布局界面中自然地表达出来。
+<center><img width="80%" src="Vis/pics/115.png"/></center>
+
+### 错题记录
