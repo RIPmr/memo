@@ -3,6 +3,7 @@
 ---
 - [Vis](README.md)
 	+ [D3Note](Vis/D3note.md)
+	+ [Algorithm](Vis/algorithm.md)
 	+ [CourseNote](Vis/visualization.md)
 - **Links**
 - [![Homepage](https://icongr.am/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
