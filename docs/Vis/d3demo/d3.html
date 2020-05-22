@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://d3js.org/d3.v5.min.js">
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <svg width="800" height="300"></svg>
+        <script>
+    	    var marge = {top:60,bottom:60,left:60,right:60}
+    	    var svg = d3.select("svg");//得到SVG画布
+    	    var width = svg.attr("width");//得到画布的宽
+    	    var height = svg.attr("height");//得到画布的长
+    	    var g = svg.append("g").attr("transform","translate("+marge.top+","+marge.left+")");
+    	
+    	    var dataset = [10,20,30,23,13,40,27,35,20];
+   
+    	    var xScale = d3.scaleBand()
+    		    .domain(d3.range(dataset.length))
+    		    .rangeRound([0,width-marge.left-marge.right]);
+    	    var xAxis = d3.axisBottom(xScale);
+    		
+    	    var yScale = d3.scaleLinear()
+    		    .domain([0,d3.max(dataset)])
+    		    .range([height-marge.top-marge.bottom,0]);
+    	    var yAxis = d3.axisLeft(yScale);
+    	
+    	    g.append("g").attr("transform","translate("+0+","+(height-marge.top-marge.bottom)+")").call(xAxis);
+    	    g.append("g").attr("transform","translate(0,0)").call(yAxis);
+
+    	    //绘制矩形和文字
+    	    var gs = g.selectAll(".rect")
+    		    .data(dataset)
+    		    .enter()
+    		    .append("g");
+    	
+    	    //绘制矩形
+    	    var rectPadding = 20;//矩形之间的间隙
+    	    gs.append("rect")
+    		    .attr("x",function(d,i){
+    			    return xScale(i)+rectPadding/2;
+    		    })	
+    		    .attr("y",function(d){
+    			    var min = yScale.domain()[0];
+    			    return yScale(min);
+    		    })
+    		    .attr("width",function(){
+    			    return xScale.step()-rectPadding;
+    		    })
+    		    .attr("fill","orange")
+    		    .transition()
+    		    .duration(1000)
+    		    //.ease(d3.easeElasticInOut)
+    		    .attr("y",function(d){
+    			    return yScale(d);
+    		    })
+    		    .attr("height",10)
+
+
+    	    //绘制文字
+            gs.append("text")
+                .attr("id", "data")
+    		    .attr("x",function(d,i){
+    			    return xScale(i)+rectPadding/2;
+    		    })
+    		    .attr("y",function(d){
+            	    var min = yScale.domain()[0];
+    			    return yScale(min);
+        	    })
+        	    .attr("dx",function(){
+        		    (xScale.step()-rectPadding)/2;
+        	    })
+        	    .attr("dy",20)
+        	    .text(function(d){
+        		    return d;
+        	    })
+        	    .transition()
+    		    .duration(1000)
+    		    .delay(function(d,i){
+    			    return i;
+    		    })
+    		    //.ease(d3.easeElasticInOut)
+        	    .attr("y",function(d){
+    			    return yScale(d);
+        	    });
+
+
+    	    // 添加交互内容
+            var circle = svg.append("text")
+                .attr("transform", "translate(50, 50) scale(2)")
+                //引入FontAwesome字体
+                .attr("class", "fa")
+                .style("fill", "black")
+                .style("cursor", "pointer")
+                .text('\uf01d');
+
+            circle.on("mouseover", function () {
+                circle
+                .style("fill", "red")
+                .text('\uf144');
+            });
+
+            circle.on("mouseout", function () {
+                circle
+                .style("fill", "black")
+                .text('\uf01d');
+            });
+
+    	    circle.on("click", function () {
+    	        g.selectAll("rect")
+                    .attr("y", function (d) {
+                        return yScale(0);
+                    })
+                    .transition()
+    		        .duration(1000)
+    		        //.ease(d3.easeElasticInOut)
+    		        .attr("y", function (d) {
+    		            return yScale(d);
+    		        }
+                );
+
+    	        g.selectAll("#data")
+                .attr("y", function (d) {
+                    return yScale(0);
+                })
+                .transition()
+                .duration(1000)
+                //.ease(d3.easeElasticInOut)
+                .attr("y", function (d) {
+                    return yScale(d);
+                });
+    	    });
+        </script>
+    </body>
+</html>

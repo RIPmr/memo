@@ -2,7 +2,8 @@
 
 ---
 - [Vis](README.md)
-	+ [Note](Vis/visualization.md)
+	+ [D3Note](Vis/D3note.md)
+	+ [CourseNote](Vis/visualization.md)
 - **Links**
 - [![Homepage](https://icongr.am/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
 - [![Unity](https://icongr.am/simple/unity.svg?color=808080&size=16)Unity Assets](https://assetstore.unity.com/publishers/34649)
