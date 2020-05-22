@@ -582,7 +582,7 @@ scaleOrdinal(4)输出：green
     </body>
 ```
 
-运行结果：
+### 运行结果
 <iframe src="Vis/d3demo/d2.html" onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"></iframe>
 
 
@@ -658,7 +658,7 @@ scaleOrdinal(4)输出：green
 	</script>
 ```
 
-运行结果：
+### 运行结果
 <iframe src="Vis/d3demo/d3.html" scrolling="no" frameborder="0" height="300" width="100%"></iframe>
 
 
@@ -666,6 +666,256 @@ scaleOrdinal(4)输出：green
 
 
 ## 用户交互
+所谓的交互操作也就是为图形元素添加监听事件，为了与图形元素进行交互操作，需要以下新的知识点：
+- on("eventName",function)；该函数是添加一个监听事件，它的第一个参数是事件类型，第二个参数是响应事件的内容
+- d3.select(this),选择当前元素
+
+### 常见的事件类型
+- click：鼠标单击某元素时触发，相当于mousedown和mouseup的组合
+- mouseover：鼠标放在某元素上触发
+- mouseout：鼠标移出某元素时触发
+- mousemove：鼠标移动时触发
+- mousedown：鼠标按钮被按下时触发
+- mouseup：鼠标按钮被松开时触发
+- dblclick：鼠标双击时触发
+
+### 查看监听事件
+```
+<script>
+	.on("click",function(){
+    	console.log(d3.event);
+    })
+</script>
+```
+可以在chrome浏览器的控制台看到输出的event事件
+
+### 为柱状图添加监听事件
+```
+<script>
+	.on("mouseover",function(){
+    	var rect = d3.select(this)
+    		.transition()
+    		.duration(1500)//当鼠标放在矩形上时，矩形变成黄色
+    		.attr("fill","yellow");
+    })
+    .on("mouseout",function(){
+    	var rect = d3.select(this)
+    		.transition()
+    		.delay(1500)
+    		.duration(1500)//当鼠标移出时，矩形变成蓝色
+    		.attr("fill","blue");
+    })
+</script>
+```
+
+### 运行结果
+<iframe src="Vis/d3demo/d4.html" scrolling="no" frameborder="0" height="300" width="100%"></iframe>
 
 
 
+
+
+
+
+## 物理效果
+### 力导向图主要函数
+- d3.forceSimulation() ，新建一个力导向图
+- d3.forceSimulation().force(),添加或者移除一个力 
+- d3.forceSimulation().nodes()，输入是一个数组，然后对这个输入的数组进行一定的数据转换，例如添加坐标什么的
+- d3.forceLink.links()，这里输入的也是一个数组（边集），然后对输入的边集进行转换
+- tick()，这个函数对于力导向图来说非常重要，因为力导向图是不断运动的，每一时刻都在发生更新，所以需要不断更新节点和连线的位置
+- d3.drag(),设置力导向图可以被拖动
+
+```d3.forceSimulation().force(name)，中只有一个参数，这个参数是某个力的名称，返回的是某个具体的力```
+```例如d3.forceSimulation().force(“link”)，则返回的是d3.forceLink()这个力```
+
+#### 数据准备
+```
+	<script>
+		var marge = {top:60,bottom:60,left:60,right:60}
+    	var svg = d3.select("svg")
+    	var width = svg.attr("width")
+    	var height = svg.attr("height")
+    	var g = svg.append("g")
+    		.attr("transform","translate("+marge.top+","+marge.left+")");
+    		
+    	//准备数据
+    	var nodes = [//节点集
+    		{name:"湖南邵阳"},
+    		{name:"山东莱州"},
+    		{name:"广东阳江"},
+    		{name:"山东枣庄"},
+    		{name:"泽"},
+    		{name:"恒"},
+    		{name:"鑫"},
+    		{name:"明山"},
+    		{name:"班长"}
+    	];
+    	
+    	var edges = [//边集
+    		{source:0,target:4,relation:"籍贯",value:1.3},
+    		{source:4,target:5,relation:"舍友",value:1},
+    		{source:4,target:6,relation:"舍友",value:1},
+    		{source:4,target:7,relation:"舍友",value:1},
+    		{source:1,target:6,relation:"籍贯",value:2},
+    		{source:2,target:5,relation:"籍贯",value:0.9},
+    		{source:3,target:7,relation:"籍贯",value:1},
+    		{source:5,target:6,relation:"同学",value:1.6},
+    		{source:6,target:7,relation:"朋友",value:0.7},
+    		{source:6,target:8,relation:"职责",value:2}
+    	];
+	</script>
+```
+
+#### 设置颜色比例尺
+```
+	<script>
+		var colorScale = d3.scaleOrdinal()
+    		.domain(d3.range(nodes.length))
+    		.range(d3.schemeCategory10);
+	</script>
+```
+
+#### 新建一个力导向图
+```
+	<script>
+		//新建力导向图
+		var forceSimulation = d3.forceSimulation()
+    		.force("link",d3.forceLink())
+    		.force("charge",d3.forceManyBody())
+    		.force("center",d3.forceCenter());
+		//生成节点数据
+    	forceSimulation.nodes(nodes).on("tick",ticked);
+		//生成边数据
+    	forceSimulation.force("link")
+    		.links(edges)
+    		.distance(function(d){//每一边的长度
+    			return d.value*100;
+    		})
+		//设置图形的中心位置	
+    	forceSimulation.force("center")
+    		.x(width/2)
+    		.y(height/2);
+	</script>
+```
+
+#### 绘制边
+```
+	<script>
+		var links = g.append("g")
+    		.selectAll("line")
+    		.data(edges)
+    		.enter()
+    		.append("line")
+    		.attr("stroke",function(d,i){
+    			return colorScale(i);
+    		})
+    		.attr("stroke-width",1);
+	</script>
+```
+
+```*注意：应该先绘制边再绘制顶点，在d3中各元素是有层级关系的，先绘制的会被后绘制的遮挡```
+
+#### 添加文字
+```
+	<script>
+		var linksText = g.append("g")
+    		.selectAll("text")
+    		.data(edges)
+    		.enter()
+    		.append("text")
+    		.text(function(d){
+    			return d.relation;
+    		})
+		var gs = g.selectAll(".circleText")
+    		.data(nodes)
+    		.enter()
+    		.append("g")
+    		.attr("transform",function(d,i){
+    			var cirX = d.x;
+    			var cirY = d.y;
+    			return "translate("+cirX+","+cirY+")";
+    		})
+    		.call(d3.drag()
+    			.on("start",started)
+    			.on("drag",dragged)
+    			.on("end",ended)
+    		);
+	</script>
+```
+
+#### 绘制节点和文字
+```
+	<script>
+		//绘制节点
+    	gs.append("circle")
+    		.attr("r",10)
+    		.attr("fill",function(d,i){
+    			return colorScale(i);
+    		})
+    	//文字
+    	gs.append("text")
+    		.attr("x",-10)
+    		.attr("y",-20)
+    		.attr("dy",10)
+    		.text(function(d){
+    			return d.name;
+    		})
+	</script>
+```
+
+#### 实现tick函数
+```
+	<script>
+		function ticked(){
+    		links.attr("x1",function(d){return d.source.x;})
+    			.attr("y1",function(d){return d.source.y;})
+    			.attr("x2",function(d){return d.target.x;})
+    			.attr("y2",function(d){return d.target.y;});
+    			
+    		linksText.attr("x",function(d){
+    			return (d.source.x+d.target.x)/2;
+    		})
+    		.attr("y",function(d){
+    			return (d.source.y+d.target.y)/2;
+    		});
+    			
+    		gs.attr("transform",function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    	}
+	</script>
+```
+
+```这里写的都是位置信息，但在绘制相应的图形元素的时候，位置信息就不那么重要了```
+
+#### 实现drag函数
+```
+	<script>
+		function started(d){
+    		if(!d3.event.active){
+    			forceSimulation.alphaTarget(0.8).restart();设置衰减系数，对节点位置移动过程的模拟，数值越高移动越快，数值范围[0，1]
+    		}
+    		d.fx = d.x;
+    		d.fy = d.y;
+    	}
+    	function dragged(d){
+    		d.fx = d3.event.x;
+    		d.fy = d3.event.y;
+    	}
+    	function ended(d){
+    		if(!d3.event.active){
+    			forceSimulation.alphaTarget(0);
+    		}
+    		d.fx = null;
+    		d.fy = null;
+    	}
+	</script>
+```
+
+- drag中有三个函数，其中d.fx和d.fy表示固定坐标
+- 例如，d.fx = d3.event.x;  d.fy = d3.event.y;
+也就是在拖动节点的时候，鼠标位置在哪里（d3.event），节点的固定位置就在哪里
+- 再看ended函数，也就是结束拖动的时候触发，可以发现固定坐标都为空（也就是不固定），这样模拟的效果比较好
+
+
+### 运行结果
+<iframe src="Vis/d3demo/d5.html" scrolling="no" frameborder="0" height="400" width="100%"></iframe>
