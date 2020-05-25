@@ -43,7 +43,8 @@
 可视分析学 | 需要人参与理解和决策的多种实际问题 | 以交互式界面为基础的分析推理科学，结合了可视化、人机交互与数据挖掘;<br>具体包括：地理分析、信息分析、科学分析、统计分析、知识发现、交互、数据管理和知识表达、表达、作业和传播、感知与认知科学 |
 
 ### 错题记录
-
+<center><img width="50%" src="Vis/mistakeCollect/1.jpg"/></center>
+<center>科学可视化的结果</center>
 
 
 
@@ -200,7 +201,7 @@
 </details>
 
 ### 错题记录
-
+根据格式塔理论,人们在观看时,眼脑在一开始的时候会先区分一个形象的各个单一的组成部分,然后再将各个部分组合起来,使之成为一个易于理解的统一体。(错)
 
 
 
@@ -538,9 +539,17 @@ Jaccard相似系数（Jaccard similarity coefficient）用于比较有限样本�
 - 演化分析 - 针对数据的时空特性
 
 ### 错题记录
+以下哪种类型科学称为第四范式(d)<br>
+a 数据密集型科学<br>
+b 理论科学   <br>
+c 经验科学   <br>
+d 计算科学	 <br>
 
-
-
+以下哪种方法能够可视化统计的结果(a)<br>
+a 盒须图   <br>
+b 直方图   <br>
+c 柱状图   <br>
+d 走势图
 
 ## 第四章
 ### 可视化基本流程初探
@@ -701,9 +710,19 @@ DBSCAN算法(Density-Based Spatial Clustering of Applications with Noise)<br>
 
 
 ### 错题记录
+可视化可以将难以理解的原始数据变换成用户可以理解的模式和特征,并显示出来。依据可视化流程概念图,在原始数据和可视化中间这一步骤是(a)<br>
+a 数据处理和变换<br>
+b 数据采集<br>
+c 数据分析<br>
+d 用户感知
 
+数据离散化/分箱时,需要根据分析需求和可视化效果来选择合适的离散化区间大小(错)
 
-
+在设计一个可视化解决方案的过程中,了解数据采集这一步骤中的(a b c),才能有的放矢地解决问题。<br>
+a 数据的采集方法<br>
+b 数据的属性<br>
+c 数据的来源<br>
+数据的处理
 
 ## 第五章
 ### 可视化编码
@@ -824,7 +843,8 @@ DBSCAN算法(Density-Based Spatial Clustering of Applications with Noise)<br>
 
 ### 错题记录
 
-
+<center><img width="30%" src="Vis/mistakeCollect/2.jpg"/></center>
+<center>上图的标注比较合适，下图是错误的标注方式</center>
 
 
 
@@ -982,10 +1002,6 @@ DBSCAN算法(Density-Based Spatial Clustering of Applications with Noise)<br>
 
 #### 混合绘制
 难点:正确显示不同类型绘制对象间的层次关系和透明颜色的叠加
-
-### 错题记录
-
-
 
 
 
@@ -1205,9 +1221,17 @@ Choropleth Map(分级统计图)
 
 
 ### 错题记录
+下列选项中,不是地理信息数据可视分析应用的是(a) <br>
+a 自动计算异常的轨迹    <br>
+b 通过交互发现拥堵的路口 <br>
+c 通过图表了解区域之间的收入差异    <br>
+d 通过地图分析微博数据的传播情况 <br>
 
-
-
+在区域数据的可视化中,在关注对象在空间中实际位置的前提下,设计展示区域的交通状况时,以下那种可视化方法是合理的(a b)<br>
+a 使用区域的颜色编码拥堵程度,仅使用红单色,越红表示越拥堵   <br>
+b 使用斜线标注每一个区域,斜线越密表示区域中车辆越多。同时采用交互的方法,当用户选择某一区域时,展示区域的详细信息。   <br>
+c 在每一个区域中画一个点,使用点的大小编码车辆多少,点越大表示车辆越多。   <br>
+d 用区域的面积大小表示车辆多少,并使用比较统计图展示数据。
 
 
 ## 第八章
@@ -1408,7 +1432,7 @@ EventRiver首先使用增量式聚类算法从一系列事件中提取热门话�
 <center><img width="80%" src="Vis/pics/115.png"/></center>
 
 ### 错题记录
-
+温度是时间序列数据(√)
 
 
 
@@ -1569,9 +1593,13 @@ EventRiver首先使用增量式聚类算法从一系列事件中提取热门话�
 - 整体结构保持对称
 
 ### 错题记录
+与结点链接法相比,树图有哪些优点?(a b c) <br>
+a 有效利用空间 <br>
+b 适用于大规模层级结构<br>
+c 可以使用颜色和大小编码结点本身的属性或权重   <br>
+d 结构清晰直观
 
-
-
+当树结构的广度比较大时,径向布局会导致不合理的长宽比(×)
 
 
 
@@ -1773,13 +1801,191 @@ EventRiver首先使用增量式聚类算法从一系列事件中提取热门话�
 
 
 ### 错题记录
-
+对于动态图来说,动画方法的优点是(a)   <br>
+a 两个相邻时间上两帧图的平滑过度   <br>
+b 可以提供整个时间上的变化概览   <br>
+c 任意两帧图的差异对比   <br>
+d 更注重时间特性上的分析<br>
 
 
 
 
 
 ## 第十一章
+### 文本数据可视化简介
+词云是一个自动化的文本可视化工具。
+- 自动提取高频词
+- 呈现高频词
+- 字体大小体现单词出现次数
+
+#### 应用场景
+- 电子商务
+- 社交计算
+- 商业智能
+- 用户体验
+- 预测分析
+- 公共关系
+
+#### 文本可视化的基本任务
+文本内容可视化
+- 总结展现文本中的内容
+- 展现文本所包含的情感
+- 辅助大规模文本数据集的浏览
+
+文本关系可视化
+- 展现文本文件之间的关联
+- 展现文件内容的内在联系
+
+#### 文本可视化流程
+
+<center><img width="60%" src="Vis/pics/151.jpg"/></center>
+<center><img width="60%" src="Vis/pics/152.jpg"/></center>
+
+#### 词频向量
+- 文档的相似性: 计算两个词频向量之间的相似性
+
+<center><img width="30%" src="Vis/pics/153.jpg"/></center>
+
+### 基于关键词的内容可视化
+#### 标签云/文本云/词云
+- 检索关键字并以模式排列
+- 用颜色和大小进行编码
+
+#### wordle
+- 视觉编码: 样式，字体，大小
+- 自定义的形状
+- 更为紧凑的布局
+
+使用步骤
+- 赋予字体大小
+- 单词词频排序
+- 依次放置单词
+
+https://wordart.com/create
+
+#### 上下文一致的词云技术
+语义相关或者相近的词总会出现在相近位置。
+
+
+### 基于特征的内容可视化
+#### 文本的特征分布
+- 平均句子长度
+- 词汇量
+
+#### 文本弧TextArc
+- 围的螺线: 文档中的句子
+- 字体、颜色: 词频
+- 内部的单词: 文档中的单词
+- 位置: 词的出现
+
+#### 文本指纹 (Literature Fingerprinting)
+- 揭示特征的分布规律
+- 将特征用一系列像素图来表示
+
+<center><img width="80%" src="Vis/pics/154.jpg"/></center>
+
+#### 文本特征透镜
+用于可视化一个文档集合中文本特征在不同粒度下的分布情况。
+
+<center><img width="80%" src="Vis/pics/155.jpg"/></center>
+
+#### ConceptVector技术
+利用单词在向量表达上的相似性来构建词典，或者说概念，以此来帮助用户检索和分析相关的文档。
+
+<center><img width="60%" src="Vis/pics/156.jpg"/></center>
+
+### 时序文档的内容可视化
+#### 时序词云
+- 对文档集合进行时间划分
+- 对文档按时间段进行可视化
+- 结合交互技术
+
+<center><img width="60%" src="Vis/pics/157.jpg"/></center>
+<center>上下文一致的词云技术</center>
+
+<center><img width="60%" src="Vis/pics/158.jpg"/></center>
+<center><img width="60%" src="Vis/pics/159.jpg"/></center>
+<center><img width="60%" src="Vis/pics/160.jpg"/></center>
+
+#### 社交媒体流SocialFlow
+<center><img width="60%" src="Vis/pics/161.jpg"/></center>
+<center><img width="60%" src="Vis/pics/162.jpg"/></center>
+<center><img width="60%" src="Vis/pics/163.jpg"/></center>
+<center><img width="60%" src="Vis/pics/164.jpg"/></center>
+
+
+### 文本关系可视化
+#### 文档关系
+- 论文之间的引用
+- 网页之间的超链接
+- 相似性
+- 层次性
+
+#### 方法
+- 图布局
+- 投影
+
+#### 句子层面的文本关系可视化
+- 单词树从<strong>句法层面</strong>呈现文本词汇的<strong>前缀关系</strong>
+- 单词树利用<strong>树形结构</strong>来可视化文本中的<strong>句子</strong>
+
+<center><img width="60%" src="Vis/pics/165.jpg"/></center>
+
+#### 短语网络
+用节点链接图来展示无结构文本中语义单元彼此间的关系。
+
+<center><img width="60%" src="Vis/pics/166.jpg"/></center>
+
+- 节点: 词或者短语
+- 边: 用户指定的关系
+- 箭头: 关系的有向性
+- 边的宽度: 关系的频率
+
+#### 句子树SentenTree
+
+<center><img width="60%" src="Vis/pics/167.jpg"/></center>
+
+#### 文档层面的文本关系可视化
+- 对单个文档定义特征向量
+- 计算文档间的相似性
+- 采用投影技术呈现文档集合的关系
+
+#### 星系视图(Galaxy View)
+- 将每个文档看作一颗星星
+- 将文档投影成点集
+- 点与点之间距离与文档主题相似性成正比
+
+<center><img width="60%" src="Vis/pics/168.jpg"/></center>
+
+#### 主题地貌(Theme Scape)
+- 用等高线展现相似文档的分布
+- 山体高度: 文档位置分布的疏密程度
+- 等高线和颜色: 文本分布的密度
+- 文档越相似，则点分布越密集
+
+<center><img width="60%" src="Vis/pics/169.jpg"/></center>
+
+#### 基于范例的大文本集合投影
+<center><img width="60%" src="Vis/pics/170.jpg"/></center>
+
+#### 新闻地图
+<center><img width="60%" src="Vis/pics/171.jpg"/></center>
+
+#### Jigsaw(多协同视图)
+<center><img width="60%" src="Vis/pics/172.jpg"/></center>
+
+#### 可视化论文集/资源
+<center><img width="60%" src="Vis/pics/173.jpg"/></center>
+
+http://textvis.lnu.se/
+
+"Introduction to Text Visualization"
+
+
+### 错题记录
+
+
+
 
 
 
