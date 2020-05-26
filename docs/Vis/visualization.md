@@ -1989,3 +1989,158 @@ http://textvis.lnu.se/
 
 
 
+## 第十二章
+### 数据及其维度
+- 数据的维度
+- 高维数据的实例
+- 高维数据可视化的挑战
+
+#### 数据的维度
+- 数据包含的属性的数量
+
+#### 多维度数据
+- 拥有多个属性的数据
+
+#### 三维数据局限性:
+- 屏幕是二维的，三维散点图的点与点之间会遮挡;
+- 从不同三维视角观察数据点会得到不同的分布
+
+#### 高维数据
+维度大于等于2的数据，就是高维数据。
+
+#### 高维数据可视化的挑战
+> 如何使用散点图可视化高维数据?
+- 增加视觉通道的数量
+- 多视图协调关联
+
+
+### 高维数据变换
+- 主成分分析法
+- 多维尺度分析法
+- 其他方法
+
+#### 高维数据变换——降维
+
+使用线性或非线性变换将高维数据投影到较低维子空间
+
+优点
+- 消除冗余
+- 减少被处理数据的数量
+- 数据呈现方便
+
+缺点
+- 数据降维会导致信息丢失
+
+应用
+- 数据可视化
+- 数据挖掘
+- 模式识别
+
+> 如何找到一个坐标(投影)使得投影后数据项的方差最大呢?
+- 二维降一维
+找方差最大方向
+- 三维降二维
+找方差最大方向 + 其他
+
+#### 协方差
+- 表示两个维度的相关性。
+
+<center><img width="30%" src="Vis/pics/174.jpg"/></center>
+
+每个维度均值为0 → 协方差为内积除以元素个数
+协方差为0 → 两个维度完全独立
+
+<center><img width="50%" src="Vis/pics/175.jpg"/></center>
+<center>协方差矩阵</center>
+
+#### PCA
+- 找到若干个新的投影维度
+- 使每个维度的数据方差最大
+- 每对维度之间的协方差最小
+
+优点:
+- 去除冗余信息
+- 每维度之间线性无关
+
+#### MDS
+<center><img width="30%" src="Vis/pics/178.jpg"/></center>
+<center><img width="50%" src="Vis/pics/176.jpg"/></center>
+<center><img width="50%" src="Vis/pics/177.jpg"/></center>
+
+### 高维数据的可视化呈现
+- 散点图矩阵
+- 平行坐标系
+- 像素图
+- 基于图标的方法
+
+#### 散点图矩阵
+<center><img width="30%" src="Vis/pics/179.jpg"/></center>
+
+<strong>散点图矩阵特点</strong>
+- 每个散点图所表示的数据是高维数据的两个属性
+- n维数据的散点图矩阵包括n乘n个图表
+- 对角线上放对应属性值的分布图
+
+<center><img width="60%" src="Vis/pics/180.jpg"/></center>
+<center><img width="60%" src="Vis/pics/181.jpg"/></center>
+
+<strong>缺点：</strong>占用空间大
+
+#### 平行坐标轴
+- 每个轴对应一个属性
+- 一条折线代表一个数据
+
+<center><img width="60%" src="Vis/pics/182.jpg"/></center>
+<center><img width="40%" src="Vis/pics/183.jpg"/></center>
+
+<strong>缺点：</strong>对非相邻属性之间关系的表现相对较弱。
+
+<center><img width="60%" src="Vis/pics/184.jpg"/></center>
+<center>改进的平行坐标轴实例</center>
+
+#### 基于图标的方法
+- 用图标表达多元数据对象
+- 不同图标元素表示不同属性
+
+- 选择易于被感知的视觉元素
+- 映射必须直观易懂
+
+<strong>实例：</strong>
+星形图、切尔诺夫脸谱图
+
+<center><img width="60%" src="Vis/pics/185.jpg"/></center>
+<center>星形图</center>
+
+#### 切尔诺夫脸图
+<center><img width="30%" src="Vis/pics/186.jpg"/></center>
+<center><img width="60%" src="Vis/pics/187.jpg"/></center>
+
+#### 像素图
+- 充分利用屏幕空间
+- 每个像素点都表示数据点
+- 利用密集、不同颜色像素表示数据
+
+<center><img width="60%" src="Vis/pics/188.jpg"/></center>
+<center><img width="60%" src="Vis/pics/189.jpg"/></center>
+<center>像素柱状图</center>
+
+#### 马赛克图
+<center><img width="60%" src="Vis/pics/190.jpg"/></center>
+<center><img width="60%" src="Vis/pics/191.jpg"/></center>
+
+<strong>优点: </strong>展现数据不同类别不断细分下的分布规律
+<strong>不足: </strong>不能把详细的数据点可视化出来
+
+
+### 错题记录
+若想保持数据点之间的相对距离不变，以下哪种降维方法是最佳选择(a)<br>
+a 多维尺度分析<br>
+b 主成分分析<br>
+c 因子分析<br>
+d 奇异值分解
+
+
+
+
+
+
