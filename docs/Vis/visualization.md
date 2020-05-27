@@ -2144,3 +2144,365 @@ d 奇异值分解
 
 
 
+## 第十三章
+### 可视化交互简述
+#### 用户与数据之间的沟通方式
+<center><img width="60%" src="Vis/pics/192.jpg"/></center>
+
+- 选择<br>
+标记区域以查看其特征或变化，通常是一些计算或操作的后续步骤<br>
+常见操作: 鼠标、悬停、刷选、框选
+
+- 探索<br>
+目标:寻找某种清晰图案<br>
+方法:调节绘制、视角位置、大小等参数
+
+- 重配<br>
+通过显示不同的排列提供不同的角度<br>
+提供多种合理的布局方式<br>
+避免绘制元素的过度重叠
+
+- 编码
+- 抽象/具体<br>
+显示更多或更少的数据细节<br>
+调整的抽象级别(概览和细节)
+
+实例<br>
+提供互动的方法以展开子类别<br>
+缩放(缩放几何)
+
+- 过滤<br>
+显示符合条件的某些数据子集<br>
+基于某些特定的条件<br>
+改变显示的数据集
+
+实例<br>
+动态查询<br>
+属性浏览器
+
+- 链接<br>
+显示相关的项目<br>
+高亮关联和关系<br>
+显示与特定数据项有关的项
+
+<center><img width="60%" src="Vis/pics/193.jpg"/></center>
+<center>七种交互方法的总结</center>
+
+### 可视化交互空间与模型
+#### 可视化的交互空间
+用户和可视化程序交互时所处的空间或者视窗
+
+- 屏幕空间<br>
+直接控制屏幕上的像素显示<br>
+所有像素、部分区域、单个像素点.
+
+<center><img width="30%" src="Vis/pics/194.jpg"/></center>
+
+- 数据值空间<br>
+用户可以对某个或某些维度指定一个范围，查看该范围内的数据<br>
+例：过滤
+
+- 数据结构空间<br>
+指定可视化中数据的细节层次
+
+- 可视化参数空间<br>
+绘制参数，如颜色、大小等
+
+- 可视化结构空间<br>
+关注系统的不同视图将视图位置、大小做成可以调整的，可以更有效地使用有限的屏幕空间。
+
+- 数据/物体空间<br>
+数据直接绘制空间
+
+- 虚拟和现实空间<br>
+将数据和空间更紧密地结合起来
+
+> 可视化交互的尺度问题
+- 数据太大，不能在屏幕上显示完整
+- 可能包含太多的事例/变量
+
+#### 可视化交互模型
+- 概括+细节模型<br>
+在一个视图上集中显示所有的对象提供整体，再通过刷选、框选等交互在相邻视图中展示它们的细节。
+
+- 聚焦+上下文模型<br>
+显示大规模数据中的局部细节
+
+- 对偶界面模型<br>
+在不同界面中基于数据的不同性质采取不同交互
+
+- 多种混合交互方式
+
+- 混合多种交互设备<br>
+兼顾好的观感体验和便携性
+
+### 可视化交互设备
+#### 世界上第一个真正意义上的交互式图形系统： Sketchpad
+<center><img width="50%" src="Vis/pics/195.jpg"/></center>
+
+#### 触屏设备
+- 手机、平板电脑
+- 通过触摸屏幕直接完成与可视化系统之间的交互
+
+#### Phontom触觉设备
+- 选择三维数据
+
+#### 智能手表
+- 兼顾触摸功能和体感功能
+- 交互方式<br>
+水平滑动、垂直滑动、旋转表盘或旁边的旋钮、移动手臂
+<center><img width="60%" src="Vis/pics/196.jpg"/></center>
+
+#### 增强现实和虚拟现实设备
+- 虚拟现实设备 - 配备游戏杆用于交互
+- 增强现实设备 - 通过摄像头捕捉用户手势并翻译为交互语言
+
+#### 目光捕捉器
+通过捕捉用户的目光了解用户的兴趣，自动增强部分数据的绘制细节
+
+### 可视化的价值和评估
+
+<strong>用户</strong>是可视化价值的体现者
+
+- 可视化主要价值<br>
+帮助用户从数据中获取新的知识
+
+- 影响因素<br>
+用户已有的专业知识和技能<br>
+用户需要的知识
+
+<center><img width="60%" src="Vis/pics/197.jpg"/></center>
+
+#### 可视化评估
+- 帮助用户认识到可视化的作用，在专业领域或其他使用场景中接受使用可视化
+- 涉及到的任务要简单
+
+#### 定量评估
+```
+列出假设
+```
+- 尽可能具体
+- 必须使用可以被证伪的假设
+- 可以是虚假设
+
+> Eg: 可视化方法A比B好 → 不恰当，无法检验 → 分成多个子假设 → <br>
+用户在使用可视化方法A完成任务T时所花费的时间比使用可视化方法B所花费的时间更短
+
+#### 常见任务
+- 识别: 用户通过可视化在数据中识别目标
+- 定位: 找到指定特征或目标的位置
+- 区分: 将数据中不同元素区分开
+- 分类: 将数据中不同元素划分为不同类型
+- 聚类: 按一定的相似法则将相似的数据聚合成-类
+- 排序: 将可视化中的对象按一定规则排序
+- 比较: 对两个或多个可视化对象进行比较并发现相似和不同处
+- 关联: 判断可视化对象之间的关联
+
+```
+设计实验
+```
+- 独立变量: 可能影响假设验证的因素，如任务、可视化方法、可视化参数
+- 因变量: 随独立变量变化而变化的变量，如完成任务的时间、完成任务的准确度
+
+```
+完成实验
+```
+- 招募被试
+- 讲解实验(目的和过程)
+- 做练习
+- 做实验并记录信息
+
+招募被试: 在满足条件的人中尽可能广泛地招募被试，如性别此例尽可能平衡，年龄范围不要太窄等
+
+```
+分析结果
+```
+- 分析对象: 一组被试反复实验结果
+- 分析方法: 统计学假设检验方法。如显著性检验，卡方检验;似然比检验，t检验，F检验
+
+<center><img width="60%" src="Vis/pics/198.jpg"/></center>
+
+#### 定性评估
+- 优点：更加灵活
+- 方法，观察、采访
+
+- 观察<br>
+对象，包括操作、问题、情绪、发现等<br>
+注意事项，降低干扰
+
+- 采访<br>
+引导用户描述细节<br>
+不能引导观点<br>
+善于倾听
+
+<center><img width="60%" src="Vis/pics/199.jpg"/></center>
+<center><img width="60%" src="Vis/pics/200.jpg"/></center>
+
+### 错题记录
+在数据量很大的情况下,可以使用哪种交互模型来优化可视化系统?(a b)<br>
+a 概览+细节模型<br>
+b 聚焦+上下文模型<br>
+c 对偶界面模型<br>
+d 混合交互方式
+
+
+
+
+
+
+## 第十四章
+### 可视化工具简介
+<center><img width="60%" src="Vis/pics/201.jpg"/></center>
+
+#### 交互式
+<center><img width="20%" src="Vis/pics/202.jpg"/></center>
+
+#### 配置式
+<center><img width="20%" src="Vis/pics/203.jpg"/></center>
+
+#### 编程式
+<center><img width="30%" src="Vis/pics/204.jpg"/></center>
+
+#### 交互式可视化工具-Power BI
+<center><img width="60%" src="Vis/pics/205.jpg"/></center>
+
+#### 交互式可视化工具-Tableau
+<center><img width="60%" src="Vis/pics/206.jpg"/></center>
+<center><img width="60%" src="Vis/pics/207.jpg"/></center>
+<center><img width="60%" src="Vis/pics/208.jpg"/></center>
+<center><img width="60%" src="Vis/pics/209.jpg"/></center>
+
+#### 总结
+适用场景:
+- 用户:缺少编程基础
+- 数据:简单
+- 任务/需求:简单、直接
+
+<center><img width="60%" src="Vis/pics/210.jpg"/></center>
+<center>更多可视化工具</center>
+
+### 配置式可视化工具
+适用场景: 
+- 用户: 对编程有简单了解
+- 数据: 简单，结构清晰
+- 任务/需求: 中等复杂度，交互任务较多
+
+
+#### 配置式可视化工具-Vega Lite
+<center><img width="60%" src="Vis/pics/211.jpg"/></center>
+<center><img width="60%" src="Vis/pics/212.jpg"/></center>
+<center><img width="60%" src="Vis/pics/213.jpg"/></center>
+
+- Vega-Lite: 配置了默认的交互模式，更易于使用
+- Vega: 更高的自由度，但也更加复杂
+
+#### ECharts
+<center><img width="60%" src="Vis/pics/214.jpg"/></center>
+<center><img width="60%" src="Vis/pics/215.jpg"/></center>
+
+#### DECK.GL
+<center><img width="60%" src="Vis/pics/216.jpg"/></center>
+
+#### PLOT.LY
+<center><img width="60%" src="Vis/pics/217.jpg"/></center>
+
+#### ANTV
+<center><img width="60%" src="Vis/pics/218.jpg"/></center>
+
+#### P4.js
+<center><img width="60%" src="Vis/pics/219.jpg"/></center>
+
+### 编程式可视化工具
+适合场景:
+- 用户: 编程能力强
+- 任务/需求: 难度高，复杂
+- 数据: 复杂
+
+
+#### OPENGL
+<center><img width="60%" src="Vis/pics/220.jpg"/></center>
+
+#### WebGL
+<center><img width="60%" src="Vis/pics/221.jpg"/></center>
+
+#### WebGL: Pixijs. sigmo.js
+<center><img width="60%" src="Vis/pics/222.jpg"/></center>
+
+#### Processing
+<center><img width="40%" src="Vis/pics/223.jpg"/></center>
+
+<strong>特性</strong>
+- 基于Java和JVM，跨平台
+- 语言简单易上手，配套开发工具
+- 集成了OpenGL,利用硬件加速
+- 用户社区的卓越贡献
+
+<strong>论坛</strong><br>
+https://discourse.processingorg/
+
+#### 编程式可视化工具-D3
+<center><img width="60%" src="Vis/pics/224.jpg"/></center>
+<center><img width="60%" src="Vis/pics/225.jpg"/></center>
+<center><img width="60%" src="Vis/pics/226.jpg"/></center>
+
+#### Visuolization Toolkit
+<center><img width="60%" src="Vis/pics/227.jpg"/></center>
+
+#### tulip
+基于C++，可对图数据可视化
+
+### 可视化工具社区
+#### 可视化工具社区-D3.js
+D3官方文档: https://github.com/d3/d3/wiki
+
+- 入门教学:<br>
+作者官方博客: https://bost.ocks.org/mike/ <br>
+Dashing D3.js: https://www.dashingd3js.com/table-of-contents <br>
+掘金: https://juejin.im/post/5aa0d5716fb9a028da7c1a4b#heading-0 <br>
+极客学院: http://wi.jkexueyuan.com/project/d3wiki/
+
+- 书籍:<br>
+吕之华:《精通D3js: 交互式数据可视化高级编程》<br>
+作者: https://bl.ocks.org/mbostock <br>
+官方Gallery: https://github.com/d3/d3/wiki/Gallery
+
+#### 可视化工具社区-Echarts
+- Echarts官方:<br>
+教程: https://echarts.baidu.com/tutorial.html <br>
+API:https://echarts.baidu.com/api.html#echarts <br>
+博客: https://efe.baidu.com/tags/ECharts/ <br>
+案例: https://echarts.baidu.com/examples/ <br>
+在线编辑器: https://echarts.baidu.com/examples/editor.html
+
+- 第三方教程:<br>
+W3cschool: https://www.w3cschool.cn/echarts_tutorial/ <br>
+Web前端中国: http://www.uihtm.com/doc/echarts/index.html
+
+- Github:<br>
+Issue社区: https://github.com/apache/incubator-echarts/issues
+
+#### Tableau & PowerBI
+- Tobleou:<br>
+官方教学视频: https://www.tableau.com/zh-cn/learn/training <br>
+W3Cschool:https://www.w3cschool.cn/tableau/ <br>
+案例库: https://public.tableau.com/en-us/s/gallery <br>
+Tableau社区: https://community.tableau.com/welcome <br>
+英文书籍: Tableau Your Data，Communicating Data with Tableau
+
+- PowerBI<br>
+官方教程: <br>
+https://docs.microsoft.com/zh-cn/power-bi/guided-learning/ <br>
+https://docs.microsoft.com/zh-cn/power-bi/consumer/power-bi-consumer-landing <br>
+知乎: https://www.zhihu.com/question/49823620
+
+
+### 错题记录
+OpenGL的全称是 Open Graphics Library
+
+以下的哪个并不是Gephi的特点(a)<br>
+a 支持多种类型的数据<br>
+b 可以导入多种不同的数据格式<br>
+c 对图数据的基本属性可以进行计算<br>
+d 用户可以引入插件
+
+
