@@ -2506,3 +2506,55 @@ c 对图数据的基本属性可以进行计算<br>
 d 用户可以引入插件
 
 
+
+
+
+
+## 第十五章
+### 可视化与形象思维
+<center><img width="60%" src="Vis/pics/228.jpg"/></center>
+
+#### 可视化本质
+一种通过生成与人的视认知相一致的图形符号，利用人的视觉感知能力提升人的认知的方法
+
+可视化表达与句型表达具有信息和计算上的等价性。
+
+- 图表表达可以提供搜索与认知的便利;
+- 句型表达在搜索时需要记住更多的信息。
+
+#### 可视化的定义
+创建并研究数据的视觉表达(Visual Representation)
+- 输入: 数据(datal
+- 输出: 视觉形式(visuol form)
+- 目标: 深入理解(insight)
+
+### 大数据可视化的作用
+<center><img width="60%" src="Vis/pics/229.jpg"/></center>
+
+<center><img width="60%" src="Vis/pics/230.jpg"/></center>
+
+#### 可视化的作用
+- 协助思考
+- 使用感知代替认知
+- 作为大量工作记忆的外界辅助
+- 增强认知能力
+
+<center><img width="60%" src="Vis/pics/231.jpg"/></center>
+<center><img width="60%" src="Vis/pics/232.jpg"/></center>
+<center><img width="60%" src="Vis/pics/233.jpg"/></center>
+<center><img width="60%" src="Vis/pics/234.jpg"/></center>
+
+#### 可视分析
+<center><img width="60%" src="Vis/pics/235.jpg"/></center>
+
+### 大数据可视化的应用案例
+<center><img width="60%" src="Vis/pics/236.jpg"/></center>
+
+可视化是基础自然科学的必要手段，是科学大数据发展的必需。
+
+#### 大数据可视化-互联网与社交媒体
+<center><img width="60%" src="Vis/pics/237.jpg"/></center>
+<center>http://www.xinhuanet.com//video/sjxw/2018-09/20/c_1123459232.htm</center>
+
+<center><img width="60%" src="Vis/pics/238.jpg"/></center>
+<center><img width="60%" src="Vis/pics/239.jpg"/></center>
