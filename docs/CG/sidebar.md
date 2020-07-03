@@ -3,8 +3,9 @@
 ---
 - [CG](README.md)
 	+ [Note](CG/takedown.md)
-	+ [Algorithm [施工中]](CG/CGalgorithm.md)
-	+ [Tricks](CG/#)
+	+ [Algorithm](CG/CGalgorithm.md)
+	+ [GAMES101](CG/games101.md)
+	+ [GAMES201](CG/games201.md)
 	+ [OpenGL](CG/OpenGL.md)
 	+ [SIGGRAPH](CG/sig.md)
 - **Links**
