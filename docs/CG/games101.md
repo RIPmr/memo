@@ -65,3 +65,50 @@ GAMES101-现代计算机图形学入门-闫令琪
 
 
 ## Transformation
+### 2D Transformation
+<center><img width="30%" src="CG/games101/16.jpg"/></center>
+<center>Scale Matrix</center>
+<br>
+<center><img width="30%" src="CG/games101/17.jpg"/></center>
+<center>Reflect Matrix</center>
+<br>
+<center><img width="30%" src="CG/games101/20.jpg"/></center>
+<center>Rotate Matrix</center>
+<br>
+<center><img width="30%" src="CG/games101/18.jpg"/></center>
+<center>Shear Matrix</center>
+
+- Hints for shear:
+	- Horizontal shift is 0 at y=0
+	- Horizontal shift isa at y=1
+	- Vertical shift is always 0
+	
+<center><img width="60%" src="CG/games101/19.jpg"/></center>
+<center>Shear</center>
+
+- Affine Transformations
+<center><img width="60%" src="CG/games101/23.jpg"/></center>
+
+- Homogeneous Coordinates
+	- Translation cannot be represented in matrix form
+	(translation is not linear transform)
+	- But we don't want translation to be a special case
+	
+<center><img width="60%" src="CG/games101/21.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/22.jpg"/></center>
+
+```*Hint: pointA + pointB = (pointA + pointB) / 2, because the w is 2```
+
+<center><img width="60%" src="CG/games101/24.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/25.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/26.jpg"/></center>
+
+
+### 3D Transformation
+
+<center><img width="60%" src="CG/games101/27.jpg"/></center>
+
+
