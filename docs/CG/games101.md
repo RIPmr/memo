@@ -110,5 +110,28 @@ GAMES101-现代计算机图形学入门-闫令琪
 ### 3D Transformation
 
 <center><img width="60%" src="CG/games101/27.jpg"/></center>
+<br>
+<center><img width="40%" src="CG/games101/28.png"/></center>
+<center>Rotation around x,y or z axis</center>
 
+```
+*NOTE:
+绕y轴旋转为何在符号上与其他两轴相反：
+X×Y=Z，Y×Z=X，但X×Z=-Y，Z×X=Y，因此相反
+```
+<br>
+<center><img width="60%" src="CG/games101/29.png"/></center>
+<br>
+<center><img width="60%" src="CG/games101/30.png"/></center>
+
+```
+*NOTE: 绕任意轴旋转为一个包含7步基本变换的级联变换：
+1、将轴起始点移动到原点
+2、旋转轴使其落入XOZ平面
+3、旋转轴使其与z轴重合
+4、执行对象绕z轴的θ角度旋转
+5、还原轴向与轴点
+
+R(θ)=T(-x,-y,-z)·Rx(a)·Ry(b)·Rz(θ)·Ry(-b)·Rx(-a)·T(x,y,z)
+```
 
