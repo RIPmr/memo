@@ -354,9 +354,197 @@ Supersampling: Result
 
 
 ### Visibility/occlusion
+- Painter's Algorithm
 - Z-buffering
+	- Z-buffering is the algorithm that eventually won.
+	- Idea:
+		- Store current min. z-value for each sample (pixel)
+		- Needs an additional buffer for depth values
+			- frame buffer stores color values
+			- depth buffer (z-buffer) stores depth
+	- IMPORTANT: For simplicity we suppose Z is always positive (smaller z -> closer, larger z -> further)
+	- Complexity
+		- O(n) for n triangles (assuming constant coverage)
+		- How is it possible to sort n triangles in linear time?
+			- Drawing triangles in different orders?
+			- Most important visibility algorithm
+		- Implemented in hardware for all GPUs
+
+<center><img width="70%" src="CG/games101/81.jpg"/></center>
+<center>Painter's Algorithm</center>
+<br>
+<center><img width="70%" src="CG/games101/83.jpg"/></center>
+<center>Problem of the Painter's Algorithm</center>
+<br>
+<center><img width="70%" src="CG/games101/82.jpg"/></center>
+<center>Z-buffering</center>
 
 
+
+## Shading
+### Diffuse
+<center><img width="70%" src="CG/games101/84.jpg"/></center>
+<center>Diffuse Reflection</center>
+<br>
+<center><img width="50%" src="CG/games101/85.jpg"/></center>
+<center>Light Falloff</center>
+<br>
+<center><img width="70%" src="CG/games101/86.jpg"/></center>
+<center>Lambertian (Diffuse) Shading</center>
+<br>
+<center><img width="70%" src="CG/games101/87.jpg"/></center>
+
+### Specular
+<center><img width="70%" src="CG/games101/88.jpg"/></center>
+<center>Specular Term (Blinn-Phong)</center>
+<center><img width="70%" src="CG/games101/89.jpg"/></center>
+<center>Blinn-Phong Model</center>
+
+### Ambient
+<center><img width="70%" src="CG/games101/90.jpg"/></center>
+<center>Ambient Term</center>
+
+### Composite
+<center><img width="70%" src="CG/games101/91.jpg"/></center>
+<center>Blinn-Phong Reflection Model</center>
+
+### Shading Frequency
+<center><img width="70%" src="CG/games101/92.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/93.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/94.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/95.jpg"/></center>
+
+- Shading Frequency: Face, Vertex or Pixel
+
+<center><img width="70%" src="CG/games101/96.jpg"/></center>
+
+### Graphics Pipeline
+<center><img width="70%" src="CG/games101/98.jpg"/></center>
+
+## Interpolation
+- Why do we want to interpolate?
+	- Specify values at vertices
+	- Obtain smoothly varying values across triangles
+- What do we want to interpolate?
+	- Texture coordinates, colors, normal vectors, ...
+<center><img width="70%" src="CG/games101/97.jpg"/></center>
+
+### Barycentric Coordinates
+- Interpolation Across Triangles: Barycentric Coordinates (重心坐标插值)
+
+<center><img width="70%" src="CG/games101/99.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/100.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/102.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/101.jpg"/></center>
+<center>Formulas</center>
+
+```
+*NOTE:
+- 重心坐标插值没有投影不变性
+- 投影变换后直接插值会得到不一样的结果
+(需要在三维空间下插值时就需要用三维空间坐标，不能用投影后的坐标)
+```
+
+<center><img width="70%" src="CG/games101/103.jpg"/></center>
+<center>Simple Texture Mapping: Diffuse Color</center>
+
+
+### Texture Magnification
+- texture is too small
+
+<center><img width="70%" src="CG/games101/104.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/105.jpg"/></center>
+
+- 双线性插值（水平和竖直方向都插值，做两次插值）
+- 先水平和先竖直结果是一样的
+
+<center><img width="70%" src="CG/games101/106.jpg"/></center>
+<center><img width="70%" src="CG/games101/107.jpg"/></center>
+<center><img width="70%" src="CG/games101/108.jpg"/></center>
+<center><img width="70%" src="CG/games101/109.jpg"/></center>
+<center>Bilinear Interpolation</center>
+
+### Texture Zooming-out
+- texture is too large
+
+<center><img width="70%" src="CG/games101/110.jpg"/></center>
+<center>Problem of Point Sampling</center>
+<br>
+<center><img width="70%" src="CG/games101/111.jpg"/></center>
+
+- Will supersampling work?
+	- Yes, high quality, but costly
+	- When highly minified, many texels in pixel footprint
+	- Signal frequency too large in a pixel
+	- Need even higher sampling frequency
+
+<center><img width="70%" src="CG/games101/112.jpg"/></center>
+
+- Let's understand this problem in another way
+	- What if we don't sample?
+	- Just need to get the average value within a range!
+
+- Mipmap
+	- Allowing (fast, approx., square) range queries
+	
+<center><img width="70%" src="CG/games101/113.jpg"/></center>
+<center>Mlipmap (L. Williams 83)</center>
+
+<center><img width="50%" src="CG/games101/114.jpg"/></center>
+
+- What is the storage overhead of a mipmap?
+```*NOTE:Mipmap所有低分辨率纹理的存储空间之和为原图的1/3```
+
+- Estimate texture footprint using texture coordinates of neighboring screen samples
+
+<center><img width="70%" src="CG/games101/115.jpg"/></center>
+<center><img width="70%" src="CG/games101/116.jpg"/></center>
+<center>Computing Mipmap Level D</center>
+<center><img width="70%" src="CG/games101/117.jpg"/></center>
+<center>Visuaiization of Mipmap Level</center>
+
+- Trilinear Interpolation (三线性插值)
+	- 对Mipmap采样时，若采样点在两层之间
+	- 两层各做双线性插值，层之间再对插值结果线性插值
+
+<center><img width="70%" src="CG/games101/118.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/119.jpg"/></center>
+<center>Visuaiization of Mipmap Level</center>
+<br>
+<center><img width="50%" src="CG/games101/120.jpg"/></center>
+
+- Mipmap Limitations
+	- Overblur, and Why?
+
+<center><img width="50%" src="CG/games101/121.jpg"/></center>
+<center>Anisotropic Filtering (各向异性过滤)</center>
+
+- 各向异性过滤能够解决部分问题
+- 可以对长条形区域做快速查询（屏幕空间方形映射到贴图为长条形的情况）
+- Ripmaps and summed area tables
+	- Can look up axis-aligned
+- rectangular zones
+	- Diagonal footprints still a problem
+
+<center><img width="30%" src="CG/games101/122.jpg"/></center>
+<center>各向异性过滤预计算，比Mipmap多了一些区域</center>
+<br>
+<center><img width="70%" src="CG/games101/123.jpg"/></center>
+<center>Irregular Pixel Footprint in Texture</center>
+
+- 但各向异性过滤仍有限制
+	- 对于斜着的长条状映射区域，效果依然不好
+	
+<center><img width="70%" src="CG/games101/124.jpg"/></center>
+<center>解决方案之一，但需多次查询，耗时</center>
 
 
 
