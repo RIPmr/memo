@@ -547,4 +547,71 @@ Supersampling: Result
 <center>解决方案之一，但需多次查询，耗时</center>
 
 
+## Geometry
+### Explicit Representations
+<center><img width="70%" src="CG/games101/125.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/126.jpg"/></center>
+<center>Polygone Mesh (Explicit)</center>
+<br>
+<center><img width="70%" src="CG/games101/127.jpg"/></center>
+<center>The Wavefront Object File (.obj) Format</center>
+
+### Curves
+#### Bezier Curve
+- Evaluating Bezier Curves (de Casteljau Algorithm)
+
+<center><img width="60%" src="CG/games101/128.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/129.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/130.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/131.jpg"/></center>
+<br>
+<center><img width="60%" src="CG/games101/132.jpg"/></center>
+
+- Evaluating Bezier Curves, Algebraic Formula
+
+<center><img width="70%" src="CG/games101/133.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/134.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/135.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/136.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/137.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/138.jpg"/></center>
+
+	- Beizer Curve具有仿射不变性
+	- Bezier Curve一定在其控制点构成的凸包内
+
+- Piecewise Bezier Curve (分段Bezier曲线)
+
+<center><img width="70%" src="CG/games101/139.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/140.jpg"/></center>
+<br>
+<center><img width="70%" src="CG/games101/141.jpg"/></center>
+
+- C0连续性：曲线端点值相等
+- C1连续性：曲线交点处一阶导相等（切线相同）
+- C2连续性：曲线交点处一阶、二阶导相等
+
+- B-splines
+	- Short for basis splines
+		- Require more information than Bezier curves
+	- Satisfy all important properties that Bezier curves have (i.e. superset)
+
+
+
+
+
+
+
+
+
+
 
