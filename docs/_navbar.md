@@ -1,6 +1,6 @@
 - [![Back](https://icongr.am/fontawesome/arrow-circle-left.svg?color=808080&size=32)Back](README.md)
 - [![Home](https://icongr.am/clarity/home.svg?color=808080&size=32)Home](https://huanime.com.cn/)
-* [![Index](https://icongr.am/clarity/book.svg?color=808080&size=32)](#)
+- [![Index](https://icongr.am/clarity/book.svg?color=808080&size=32)](#)
 	* [Math](Math/AdvMath)
 	* [CG Note](CG/takedown)
 	* [ML Note](ML/optimizer)
