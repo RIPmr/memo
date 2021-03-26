@@ -4,6 +4,7 @@
 - [Other](README.md)
 	+ [C++ EP](Other/CPP_ErrorProne.md)
 	+ [Design Pattern](Other/DesignPattern.md)
+	+ [Lua Framework](Other/LuaFramework.md)
 - **Links**
 - [![Homepage](https://icongr.am/material/home.svg?size=16&color=808080)Homepage](https://huanime.com.cn)
 - [![Unity](https://icongr.am/simple/unity.svg?color=808080&size=16)Unity Assets](https://assetstore.unity.com/publishers/34649)
