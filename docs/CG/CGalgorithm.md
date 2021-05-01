@@ -78,19 +78,11 @@ ul
 
 <div class=WordSection1 style='layout-grid:15.6pt'>
 
-<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:幼圆;background:
-#D9D9D9'>光栅化算法<span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></b></p>
+## 光栅化算法
 
-<p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
+### 数值微分法（Digital Differential Analyzer，DDA）
 
-<p class=MsoNormal><b><span style='font-family:宋体'>数值微分法（</span><span
-lang=EN-US>Digital Differential Analyzer</span></b><b><span style='font-family:
-宋体'>，</span><span lang=EN-US>DDA</span></b><b><span style='font-family:宋体'>）</span></b></p>
-
-<p class=MsoNormal><span style='font-family:宋体'>一种直接从直线的微分方程生成直线的方法</span></p>
-
-<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+> 一种直接从直线的微分方程生成直线的方法
 
 <p class=MsoNormal><span style='font-family:宋体'>通过给定直线的端点</span><span
 lang=EN-US>P<sub>0</sub>(x<sub>0</sub>, y<sub>0</sub>)</span><span
@@ -142,9 +134,8 @@ style='font-family:宋体'>直观、易实现</span></p>
 <p class=MsoNormal><b><span style='font-family:宋体'>缺点：</span></b><span
 style='font-family:宋体'>有浮点数和浮点运算，效率不高</span></p>
 
-<p class=MsoNormal><b><span style='font-family:宋体'>中点</span><span lang=EN-US>Bresenham</span></b><b><span
-style='font-family:宋体'>算法</span></b></p>
-
+### 中点Bresenham算法
+<br>
 <p class=MsoNormal><span style='font-family:宋体'>设</span><span lang=EN-US>A</span><span
 style='font-family:宋体'>为</span><span lang=EN-US>CD</span><span
 style='font-family:宋体'>边的中点，若</span><span lang=EN-US>B</span><span
@@ -277,9 +268,8 @@ color:#4F4F4F;background:white'>&nbsp;</span></p>
 <p class=MsoNormal><span lang=EN-US style='font-family:"Arial","sans-serif";
 color:#4F4F4F;background:white'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span style='font-family:宋体'>另一种思想的</span><span
-lang=EN-US>Bresenham</span></b><b><span style='font-family:宋体'>算法</span></b></p>
-
+### 另一种思想的Bresenham算法
+<br>
 <p class=MsoNormal><span style='font-family:宋体'>采用递推步进的办法，令每次最大变化方向的坐标步进一个象素，同时另一个方向的坐标依据误差判别式的符号来决定是否也要步进一个像素</span></p>
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
@@ -499,9 +489,8 @@ style='font-family:宋体'>可利用算术左移一位来完成，因此这个�
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span style='font-family:宋体'>改进的</span><span lang=EN-US>Bresenham</span></b><b><span
-style='font-family:宋体'>算法</span></b></p>
-
+### 改进的Bresenham算法
+<br>
 <p class=MsoNormal><span style='font-family:宋体'>利用相似三角形，每次画点后平移直线段，判定画的点偏上还是偏下时总是使用最大的相似三角形的宽高（△</span><span
 lang=EN-US>x, </span><span style='font-family:宋体'>△</span><span lang=EN-US>y</span><span
 style='font-family:宋体'>）</span></p>
@@ -613,6 +602,8 @@ lang=EN-US>Bresenham</span><span style='font-family:宋体'>的代码实现</spa
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
 
+### 代码实现
+<br>
 <p class=MsoNormal><b><span style='font-family:宋体'>代码实现（</span><span
 lang=EN-US>DDA</span></b><b><span style='font-family:宋体'>）：</span></b></p>
 
@@ -1033,12 +1024,9 @@ style='font-size:9.5pt;font-family:新宋体;color:black'>&nbsp;&nbsp;&nbsp; }</
 <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:新宋体;
 color:black'>}</span></p>
 
-<p class=MsoNormal><b><span style='font-size:18.0pt;font-family:宋体'>画圆法</span></b></p>
-
-<p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
-
-<p class=MsoNormal><b><span style='font-family:宋体'>八分画圆法</span></b></p>
-
+## 画圆法
+### 八分画圆法
+<br>
 <p class=MsoNormal><span style='font-family:宋体'>利用圆的简单方程或极坐标方程画八分之一圆然后对称得到整圆</span></p>
 
 <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
@@ -1168,9 +1156,8 @@ color:black'>&nbsp;</span></p>
 <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:新宋体;
 color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span lang=EN-US>Bresenham</span></b><b><span
-style='font-family:宋体'>画圆法</span></b></p>
-
+### Bresenham画圆法
+<br>
 <p class=MsoNormal><span style='font-size:9.5pt;font-family:新宋体;color:black'>借助中点<span
 lang=EN-US>Bresenham</span>画线的思想以及根据圆的特点，首先将圆平移到原点位置，然后我们只需要画出<span lang=EN-US>1/8</span>的圆弧<span
 lang=EN-US>(</span>第一象限上斜率绝对值小于<span lang=EN-US>1</span>的那八分圆<span lang=EN-US>)</span>，根据对称翻转，就可以绘制出一整个圆</span></p>
@@ -1387,9 +1374,8 @@ color:black'>&nbsp;</span></p>
 <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:新宋体;
 color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span lang=EN-US>Bresenham</span></b><b><span
-style='font-family:宋体'>椭圆</span></b></p>
-
+### Bresenham椭圆
+<br>
 <p class=MsoNormal><span style='font-family:宋体'>和画圆不同，画椭圆时为四分对称而非八分对称，且在画第一象限部分时，需要将椭圆分为上下两个部分，两部分以椭圆法向</span><span
 lang=EN-US>X</span><span style='font-family:宋体'>分量与</span><span lang=EN-US>Y</span><span
 style='font-family:宋体'>分量相同的点（椭圆上斜率为</span><span lang=EN-US>-1</span><span
@@ -1472,15 +1458,9 @@ id="图片 73" src="CG/CG_algorithms/image030.jpg"></span></p>
 <p class=MsoNormal><span lang=EN-US><img border=0 width=430 height=135
 id="图片 74" src="CG/CG_algorithms/image031.jpg"></span></p>
 
-<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:幼圆;background:
-#D9D9D9'>多边形填充算法<span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></b></p>
-
-<p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
-
-<p class=MsoNormal><b><span lang=EN-US>X</span></b><b><span style='font-family:
-宋体'>扫描线算法</span></b></p>
-
+## 多边形填充算法
+### 扫描线算法
+<br>
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>需要注意的问题及解决方案：</span></p>
 
 <p class=MsoNormal style='margin-left:0cm;text-indent:21.0pt'><span lang=EN-US>（1）</span><span
@@ -1534,9 +1514,7 @@ lang=EN-US>+1</span><span style='font-family:宋体'>）</span></p>
 
 <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='color:red'>Y</span></b><b><span
-style='font-family:宋体;color:red'>向连贯性算法</span></b></p>
-
+### Y向连贯性算法
 <p class=MsoNormal><b><span lang=EN-US style='color:red'>(</span></b><span
 lang=EN-US style='font-size:12.0pt;font-family:宋体'><a
 href="https://blog.csdn.net/wodownload2/article/details/52154207">https://blog.csdn.net/wodownload2/article/details/52154207</a></span><b><span
@@ -1805,8 +1783,8 @@ src="CG/CG_algorithms/image043.png" alt="IMG_256"></span></p>
 style='font-family:宋体'>使</span><span lang=EN-US>yi=4</span><span
 style='font-family:宋体'>，重复继续。</span></p>
 
-<p class=MsoNormal><b><span style='font-family:宋体'>边缘填充算法</span></b></p>
-
+### 边缘填充算法
+<br>
 <h2 style='margin-top:6.0pt;margin-right:0cm;margin-bottom:12.0pt;margin-left:
 0cm;text-indent:21.0pt;line-height:24.0pt;background:white'><span
 style='font-size:10.5pt'>填充原理</span></h2>
@@ -1850,8 +1828,8 @@ src="CG/CG_algorithms/image044.png" alt="IMG_256"></span></p>
 
 <p class=MsoNormal><b><span lang=EN-US>&nbsp;</span></b></p>
 
-<p class=MsoNormal><b><span style='font-family:宋体'>区域填充算法（种子填充）</span></b></p>
-
+### 区域填充算法（种子填充）
+<br>
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>内定义区域（</span><span
 lang=EN-US>interior-defined</span><span style='font-family:宋体'>）的定义是：给定一个像素</span><span
 lang=EN-US>S</span><span style='font-family:宋体'>，颜色是</span><span lang=EN-US>C</span><span
@@ -1980,9 +1958,7 @@ color:black'>&nbsp;</span></p>
 <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:新宋体;
 color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:幼圆;background:
-#D9D9D9'>裁剪算法<span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b></p>
+## 裁剪算法
 
 <p class=MsoNormal><span lang=EN-US><img border=0 width=412 height=190
 id="图片 111" src="CG/CG_algorithms/image065.jpg"></span></p>
@@ -2008,9 +1984,7 @@ style='font-family:宋体'>条件（</span><span lang=EN-US>1</span><span
 style='font-family:宋体'>、</span><span lang=EN-US>2</span><span style='font-family:
 宋体'>）都不能完全确定时，则计算它与一条或多条裁剪边界的交点</span><span lang=EN-US>.</span></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>Cohen-Sutherland</span></b><b><span
-style='font-family:"微软雅黑","sans-serif";color:#333333;background:white'>方法</span></b></p>
+### Cohen-Sutherland方法
 
 <p class=MsoNormal><span style='font-family:幼圆'>基于编码的裁剪方法</span></p>
 
@@ -2069,9 +2043,7 @@ style='font-family:宋体'>适合并行运算</span><span lang=EN-US>.</span></p
 
 <p class=MsoNormal><span lang=EN-US style='font-family:幼圆'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>Liang-Barsky</span></b><b><span
-style='font-family:"微软雅黑","sans-serif";color:#333333;background:white'>算法</span></b></p>
+### Liang-Barsky算法
 
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:幼圆'>在<span
 lang=EN-US>Cohen-Sutherland</span>算法提出后，梁友栋和<span lang=EN-US>Barsky</span>又针对标准矩形窗口提出了更快的<span
@@ -2237,14 +2209,9 @@ border=0 width=271 height=103 id="图片 139" src="CG/CG_algorithms/image088.jpg
 
 <br>
 
-<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:幼圆;background:
-#D9D9D9'>光照模型<span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></b></p>
-
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>Phong</span></b><b><span style='font-family:
-"微软雅黑","sans-serif";color:#333333;background:white'>模型</span></b></p>
-
+## 光照模型
+### Phong模型
+<br>
 <p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:幼圆'><img
 border=0 width=233 height=161 src="CG/CG_algorithms/image089.jpg"
 alt="IMG_256"><br>
@@ -2377,10 +2344,8 @@ alt="IMG_256"></span></p>
 border=0 width=544 height=319 id="图片 20" src="CG/CG_algorithms/image102.jpg"
 alt="IMG_256"></span></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>Gouraud</span></b><b><span style='font-family:
-"微软雅黑","sans-serif";color:#333333;background:white'>着色</span></b></p>
-
+### Gouraud着色
+<br>
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:幼圆'>在光照着色器的早期，开发者曾经在<b>顶点着色器中</b>实现冯氏光照模型，相比片段来说，顶点要少得多，因此会更高效，所以（开销大的）光照计算频率会更低。</span></p>
 
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:幼圆'>然而，顶点着色器中的最终颜色值是仅仅只是那个顶点的颜色值，片段的颜色值是由插值光照颜色所得来的。结果就是这种光照看起来不会非常真实，除非使用了大量顶点。</span></p>
@@ -2395,10 +2360,8 @@ alt="IMG_256"></span></p>
 <p class=MsoNormal><b><span lang=EN-US style='font-size:12.0pt;font-family:
 幼圆'>&nbsp;</span></b></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>Blinn-Phong</span></b><b><span
-style='font-family:"微软雅黑","sans-serif";color:#333333;background:white'>模型</span></b></p>
-
+### Blinn-Phong模型
+<br>
 <p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:幼圆'><img
 border=0 width=255 height=161 id="图片 21" src="CG/CG_algorithms/image104.jpg"
 alt="IMG_256"></span></p>
@@ -2530,10 +2493,8 @@ lang=EN-US>(Halfway Vector)</span>，即光线与视线夹角一半方向上的�
 
 <p class=MsoNormal><span lang=EN-US style='font-family:幼圆'>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span lang=EN-US style='font-family:"微软雅黑","sans-serif";
-color:#333333;background:white'>PBR(Physically Based Rendering)</span></b><b><span
-style='font-family:"微软雅黑","sans-serif";color:#333333;background:white'>模型</span></b></p>
-
+### PBR(Physically Based Rendering)模型
+<br>
 <p class=MsoNormal><span lang=EN-US><img border=0 width=379 height=181
 id="图片 15" src="CG/CG_algorithms/image114.jpg"></span></p>
 
@@ -2560,9 +2521,8 @@ style='font-family:宋体'>应用基于物理的</span><span lang=EN-US>BRDF</sp
 
 <p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>&nbsp;</span></p>
 
-<p class=MsoNormal><b><span style='font-family:"微软雅黑","sans-serif";color:#333333;
-background:white'>金属质地工作流<span lang=EN-US>(Metallic Workflow)</span>方案</span></b></p>
-
+### 金属质地工作流(Metallic Workflow)方案
+<br>
 <p class=MsoNormal><b><span style='font-family:宋体'>微平面理论</span></b></p>
 
 <p class=MsoNormal style='text-indent:21.0pt'><span style='font-family:宋体'>所有的</span><span

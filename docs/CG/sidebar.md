@@ -2,10 +2,14 @@
 
 ---
 - [CG](README.md)
-	+ [Note](CG/takedown.md)
+	+ [Class Note](CG/takedown.md)
+	+ [RTR Note](CG/RTR.md)
+	+ [GPU Pro](CG/GPUPRO.md)
+	+ [GPU Gems](CG/GPUGEMS.md)
 	+ [Algorithm](CG/CGalgorithm.md)
 	+ [GAMES101](CG/games101.md)
 	+ [GAMES201](CG/games201.md)
+	+ [GAMES202](CG/games202.md)
 	+ [OpenGL](CG/OpenGL.md)
 	+ [SIGGRAPH](CG/sig.md)
 - **Links**
